@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "identifier": "level",
+    "name": "等级",
+    "type": 0,
+    "default_value": 1,
+    "value_type": 2
+  },
+  {
+    "id": 2,
+    "identifier": "strength",
+    "name": "力量",
+    "type": 1,
+    "default_value": 10.0,
+    "value_type": 1
+  },
+  {
+    "id": 3,
+    "identifier": "agility",
+    "name": "敏捷",
+    "type": 1,
+    "default_value": 8.0,
+    "value_type": 1
+  },
+  {
+    "id": 5,
+    "identifier": "stamina",
+    "name": "耐力",
+    "type": 1,
+    "default_value": 12.0,
+    "value_type": 1
+  },
+  {
+    "id": 101,
+    "identifier": "attack",
+    "name": "攻击力",
+    "type": 2,
+    "default_value": 0.0,
+    "value_type": 1,
+    "formula": "LinearAttack",
+    "depends_idents": [
+      "strength",
+      "agility"
+    ]
+  },
+  {
+    "id": 102,
+    "identifier": "hp",
+    "name": "最大生命",
+    "type": 2,
+    "default_value": 0,
+    "value_type": 2,
+    "formula": "MaxHP",
+    "depends_idents": [
+      "stamina"
+    ]
+  },
+  {
+    "id": 103,
+    "identifier": "defense",
+    "name": "防御力",
+    "type": 2,
+    "default_value": 0,
+    "value_type": 1,
+    "formula": "Defense",
+    "depends_idents": [
+      "stamina",
+      "strength"
+    ]
+  },
+  {
+    "id": 201,
+    "identifier": "power",
+    "name": "战斗力",
+    "type": 2,
+    "default_value": 0,
+    "value_type": 1,
+    "formula": "CombatPower",
+    "depends_idents": [
+      "attack",
+      "hp",
+      "defense"
+    ]
+  },
+  {
+    "id": 1001,
+    "identifier": "exp",
+    "name": "经验值",
+    "type": 0,
+    "default_value": 0,
+    "value_type": 2
+  },
+  {
+    "id": 1002,
+    "identifier": "gold",
+    "name": "金币",
+    "type": 0,
+    "default_value": 100,
+    "value_type": 2
+  }
+]
