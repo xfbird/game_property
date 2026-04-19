@@ -95,64 +95,93 @@
                 ValueType:      property.ValueTypeFloat32,
             },
         })
-// 3. 创建模板
-tmpl := &property.PropTemplate{
-    ID:    1,
-    Name:  "玩家",
-    PropIDs: []int{1, 2},
-}
-// 4. 创建属性管理器
-mgr := property.NewPropertyManager(defTable, tmpl, 1001)
-// 5. 获取属性值
-str, _ := mgr.GetFloatByID(1)  // 力量
-atk, _ := mgr.GetFloatByID(2)  // 攻击力
-// 6. 应用修改器
-mgr.ApplyPermanentModifier(1, 5.0, property.OpTypeFlat, 
-    property.SourceTypeEquip, 1001)
-}
+        // 3. 创建模板
+        tmpl := &property.PropTemplate{
+            ID:    1,
+            Name:  "玩家",
+            PropIDs: []int{1, 2},
+        }
+        // 4. 创建属性管理器
+        mgr := property.NewPropertyManager(defTable, tmpl, 1001)
+        // 5. 获取属性值
+        str, _ := mgr.GetFloatByID(1)  // 力量
+        atk, _ := mgr.GetFloatByID(2)  // 攻击力
+        // 6. 应用修改器
+        mgr.ApplyPermanentModifier(1, 5.0, property.OpTypeFlat, 
+            property.SourceTypeEquip, 1001)
+        }
 ## 🔧 配置系统
 ### 属性定义配置 (config/props.json)
 json
+
 [
-{
-"id": 1,
-"identifier": "level",
-"name": "等级",
-"type": 0,
-"default_value": 1,
-"value_type": 2
-},
-{
-"id": 2,
-"identifier": "strength",
-"name": "力量",
-"type": 1,
-"default_value": 10,
-"value_type": 1
-},
-{
-"id": 101,
-"identifier": "attack",
-"name": "攻击力",
-"type": 2,
-"formula": "LinearAttack",
-"depends_idents": ["strength", "agility"],
-"value_type": 1
-}
+
+    {
+
+    "id": 1,
+
+    "identifier": "level",
+
+    "name": "等级",
+
+    "type": 0,
+
+    "default_value": 1,
+
+    "value_type": 2
+
+    },
+
+    {
+
+    "id": 2,
+
+    "identifier": "strength",
+
+    "name": "力量",
+
+    "type": 1,
+
+    "default_value": 10,
+
+    "value_type": 1
+
+    },
+
+    {
+
+    "id": 101,
+
+    "identifier": "attack",
+
+    "name": "攻击力",
+
+    "type": 2,
+
+    "formula": "LinearAttack",
+
+    "depends_idents": ["strength", "agility"],
+
+    "value_type": 1
+
+    }
+
 ]
 ### 环境变量配置
-bash
-日志配置
-export PROPERTY_LOG_LEVEL=debug    # debug/info/warn/error
-export LOG_FORMAT=custom          # custom/json/text
-export LOG_SOURCE=true            # 显示源码位置
-export DEBUG=1                    # 调试模式
-事件系统
-export EVENT_QUEUE_SIZE=1000      # 事件队列大小
+    bash
+    日志配置
+        export PROPERTY_LOG_LEVEL=debug    # debug/info/warn/error
+        export LOG_FORMAT=custom          # custom/json/text
+        export LOG_SOURCE=true            # 显示源码位置
+        export DEBUG=1                    # 调试模式
+    事件系统
+        export EVENT_QUEUE_SIZE=1000      # 事件队列大小
 ## 📊 核心API
 ### 属性管理
 go
+
 // 获取属性值
+
 func (mgr *PropertyManager) GetFloatByID(propID int) (float32, bool)
 
 func (mgr *PropertyManager) GetInt32ByID(propID int) (int32, bool)
