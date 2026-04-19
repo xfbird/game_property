@@ -154,38 +154,69 @@ export EVENT_QUEUE_SIZE=1000      # 事件队列大小
 go
 // 获取属性值
 func (mgr *PropertyManager) GetFloatByID(propID int) (float32, bool)
+
 func (mgr *PropertyManager) GetInt32ByID(propID int) (int32, bool)
+
 func (mgr *PropertyManager) GetBoolByID(propID int) (bool, bool)
+
 // 设置立即型属性
+
 func (mgr *PropertyManager) SetPropFloat(propID int, value float32, sourceID int32) (bool, int32)
+
 func (mgr *PropertyManager) SetPropInt(propID int, value int32, sourceID int32) (bool, int32)
+
 func (mgr *PropertyManager) SetPropBool(propID int, value bool, sourceID int32) (bool, int32)
+
 // 应用修改器
+
 func (mgr *PropertyManager) ApplyModifierByID(
+
 propID int,
+
 value any,
 opType property.OpType,
+
 sourceType property.SourceType,
+
 sourceID int32,
+
 duration time.Duration) bool
+
 // 批量修改器
+
 func (mgr *PropertyManager) ApplyBatchModifier(
+
 sourceType property.SourceType,
+
 sourceID int32,
+
 items []property.BatchModifierItem,
+
 duration time.Duration) (int, bool)
+
 ### 事件系统
 go
+
 // 创建事件管理器
+
 eventMgr := property.NewEventManager(1000)
+
 // 设置全局监听器
+
 eventMgr.SetGlobalListenerFunc(func(event property.PropChangeEvent) {
+
 // 处理属性变更事件
+
 })
+
 // 注册特定属性监听器
+
 eventMgr.RegisterForProp(PROP_STR, func(event property.PropChangeEvent) {
+
 // 处理力量变化
+
 }, 5) // 优先级
+
 ### 模板管理
 go
 // 创建模板管理器
