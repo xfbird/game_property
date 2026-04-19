@@ -358,17 +358,7 @@ player := property.NewPropertyManager(defTable, playerTmpl, 1001)
         export LOG_FORMAT=custom
         go run main.go
 ## 📄 代码生成
-    项目包含常量生成工具，根据配置文件自动生成常量：
-    bash
-    生成常量文件
-    go generate ./...
-    生成的常量文件包含所有属性ID的常量定义，便于代码中使用。
 ## 🤝 贡献指南
-    1. Fork 仓库
-    2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-    3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-    4. 推送到分支 (`git push origin feature/AmazingFeature`)
-    5. 开启 Pull Request
 ### 代码规范
     - 遵循Go代码规范
     - 添加必要的测试
@@ -381,5 +371,5 @@ player := property.NewPropertyManager(defTable, playerTmpl, 1001)
 ---
 **项目状态**: ✅ 生产就绪  
 **版本**: 1.0.0  
-**最后更新**: 2024年1月  
+**最后更新**: 2025年4月  
 **Go版本要求**: 1.20+
