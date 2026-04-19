@@ -1,11 +1,5 @@
 
 Game Property Management System
-
-    https://img.shields.io/badge/go-1.20+-00ADD8?style=for-the-badge&logo=go
-    https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
-    https://img.shields.io/github/issues/yourusername/game-property?style=for-the-badge
-    https://img.shields.io/github/stars/yourusername/game-property?style=for-the-badge
-
 一个高性能、类型安全的Golang游戏属性管理系统，专为大型在线游戏设计。支持属性计算、事件驱动、修改器系统、公式推导和时间管理。
 
 ✨ 特性亮点
